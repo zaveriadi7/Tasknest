@@ -31,9 +31,8 @@ npm install
 ```
 3. Set Up PostgreSQL Database
 Create a PostgreSQL database and run the following SQL queries to create the necessary tables:
-```
 sql
-Copy code
+```
 CREATE TABLE tasks (
   id SERIAL PRIMARY KEY,
   task_name VARCHAR(255) NOT NULL,
