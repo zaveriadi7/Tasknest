@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+    <link rel="stylesheet" href="/register.css">
+</head>
+<style>input[type="text"], 
+    input[type="email"], 
+    input[type="password"], 
+    input[type="file"], 
+    textarea {
+      width: 100%; /* Make inputs take up the full width of their container */
+      height: 40px; /* Set a consistent height */
+      padding: 10px; /* Add padding inside the input */
+      margin: 5px 0; /* Add spacing between input fields */
+      border: 1px solid #ccc; /* Optional: styling the border */
+      border-radius: 5px; /* Optional: rounded corners */
+      box-sizing: border-box; /* Ensure padding and borders are included in the element's total width and height */
+    }
+    
+    /* Optional: Set a maximum width for all inputs to avoid them stretching too much */
+    input[type="text"], input[type="email"], input[type="password"], input[type="file"], textarea {
+      max-width: 400px; /* Set the maximum width to avoid very wide inputs */
+    }</style>
+<body>
+    <div class="form-container">
+        <h2>Welcome to TaskNest</h2>
+        <form action="/auth/register" method="post">
+            <label>Username:</label>
+            <input type="text" name="username" required><br>
+            
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+            
+            <button type="submit">Login</button>
+        </form>
+    </div>
+</body>
+</html>

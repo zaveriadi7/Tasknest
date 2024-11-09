@@ -1,0 +1,43 @@
+const express = require('express');
+const pool = require('../app');
+
+const router = express.Router();
+
+// Middleware to check if user is logged in
+function isAuthenticated(req, res, next) {
+    if (req.session.userId) {
+        return next();
+    }
+    res.redirect('/auth/login');
+}
+
+// List all tasks for the logged-in user
+router.get('/', isAuthenticated, async (req, res) => {
+    const result = await pool.query('SELECT * FROM tasks WHERE user_id = $1', [req.session.userId]);
+    res.render('dashboard', { tasks: result.rows });
+});
+
+// Create new task
+router.post('/create', isAuthenticated, async (req, res) => {
+    const { title, description, due_date, category_id } = req.body;
+    await pool.query(
+        'INSERT INTO tasks (user_id, title, description, due_date, category_id) VALUES ($1, $2, $3, $4, $5)',
+        [req.session.userId, title, description, due_date, category_id]
+    );
+    res.redirect('/tasks');
+});
+
+// Update task status
+router.post('/update/:id', isAuthenticated, async (req, res) => {
+    const { status } = req.body;
+    await pool.query('UPDATE tasks SET status = $1 WHERE id = $2 AND user_id = $3', [status, req.params.id, req.session.userId]);
+    res.redirect('/tasks');
+});
+
+// Delete task
+router.post('/delete/:id', isAuthenticated, async (req, res) => {
+    await pool.query('DELETE FROM tasks WHERE id = $1 AND user_id = $2', [req.params.id, req.session.userId]);
+    res.redirect('/tasks');
+});
+
+module.exports = router;
