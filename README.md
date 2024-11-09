@@ -1,6 +1,6 @@
 TaskNest
 
-A task management web application that allows users to create, update, and delete tasks. Users can also upload, preview, and download files associated with tasks(coming soon). This app is built using Node.js, Express.js, PostgreSQL, and Multer for file handling.
+A task management web application that allows users to create, update, and delete tasks. Users can also upload, preview, and download files associated with tasks(coming soon). This app is built using Node.js, Express.js, PostgreSQL.
 
 Features
 Create Tasks: Users can create new tasks with a name, description, and file attachment.
@@ -13,7 +13,7 @@ Tech Stack
 Frontend: HTML, CSS, EJS
 Backend: Node.js, Express.js
 Database: PostgreSQL
-File Upload: Multer
+
 CSS Styling: Flexbox for layout and responsive design
 Prerequisites
 Before running the app, ensure you have the following installed:
@@ -71,10 +71,5 @@ node app.js
 This will start the app on http://localhost:3000.
 
 6. Visit the App
-Open your browser and visit http://localhost:3000. You will be able to:
+Open your browser and visit http://localhost:3000. 
 
-Create new tasks with a file upload.
-View tasks, update them with new files, or delete them.
-Preview and download files attached to tasks.
-File Upload
-This app uses Multer to handle file uploads. The uploaded files are stored in the uploads/ directory on the server(coming soon).
