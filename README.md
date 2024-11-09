@@ -26,9 +26,10 @@ Setup and Installation
 2. Install Dependencies
 Run the following command to install the required dependencies:
 
-bash
+```
 Copy code
 npm install
+```
 3. Set Up PostgreSQL Database
 Create a PostgreSQL database and run the following SQL queries to create the necessary tables:
 
