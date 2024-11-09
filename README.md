@@ -27,12 +27,11 @@ Setup and Installation
 Run the following command to install the required dependencies:
 
 ```
-Copy code
 npm install
 ```
 3. Set Up PostgreSQL Database
 Create a PostgreSQL database and run the following SQL queries to create the necessary tables:
-
+```
 sql
 Copy code
 CREATE TABLE tasks (
@@ -48,13 +47,14 @@ CREATE TABLE task_files (
   file_path VARCHAR(255),
   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
+```
 Ensure that PostgreSQL is running on your machine.
 
 4. Configure the Database Connection
 In your app.js (or the main backend file), update the database connection details.
 
 javascript
-Copy code
+```
 const pool = new Pool({
   user: 'yourusername',
   host: 'localhost',
@@ -62,12 +62,13 @@ const pool = new Pool({
   password: 'yourpassword',
   port: 5432
 });
+```
 5. Run the Application
 To start the server, run the following command:
 
-bash
-Copy code
-npm start
+```
+node app.js
+```
 This will start the app on http://localhost:3000.
 
 6. Visit the App
