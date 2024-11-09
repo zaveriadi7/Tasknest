@@ -1,4 +1,5 @@
-Task Management App
+TaskNest
+
 A task management web application that allows users to create, update, and delete tasks. Users can also upload, preview, and download files associated with tasks(coming soon). This app is built using Node.js, Express.js, PostgreSQL, and Multer for file handling.
 
 Features
